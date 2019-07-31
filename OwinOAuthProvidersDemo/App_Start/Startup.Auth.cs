@@ -6,6 +6,7 @@ using Owin.Security.Providers.Evernote;
 using Owin.Security.Providers.PayPal;
 using Owin.Security.Providers.ArcGISPortal;
 using Owin.Security.Providers.Typeform;
+using Owin.Security.Providers.OpenID;
 using Owin.Security.Providers.Okta;
 
 namespace OwinOAuthProvidersDemo
@@ -19,10 +20,23 @@ namespace OwinOAuthProvidersDemo
 			app.UseCookieAuthentication(new CookieAuthenticationOptions
 			{
 				AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-				LoginPath = new PathString("/Account/Login")
-			});
+				LoginPath = new PathString("/Account/Login"),
+                ExpireTimeSpan = System.TimeSpan.FromMinutes(5),
+                SlidingExpiration = false,
+                CookieName = "DemoAppCookie"
+            });
 			// Use a cookie to temporarily store information about a user logging in with a third party login provider
 			app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+
+            app.UseOktaAuthentication(new OktaAuthenticationOptions
+            {
+                TenantAddress = "https://examply.okta-emea.com",
+                AuthzServer = "aus2mqv1juVd2Uc900i7",
+                ClientId = "0oa2zoxzwwAvmGSCi0i7",
+                ClientSecret = "lL4U1cOBQ3j812t2zhQnY8_QsqwWk29jzHSVEkzT",
+                Scope = "openid profile"
+            });
+
             //app.UseDeviantArtAuthentication("id", "secret");
             //app.UseUntappdAuthentication("id", "secret");
             // Uncomment the following lines to enable logging in with third party login providers

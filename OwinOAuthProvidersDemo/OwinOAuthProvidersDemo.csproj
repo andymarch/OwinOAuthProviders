@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OwinOAuthProvidersDemo</RootNamespace>
     <AssemblyName>OwinOAuthProvidersDemo</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort>44300</IISExpressSSLPort>
@@ -125,9 +125,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -370,6 +370,10 @@
     <ProjectReference Include="..\src\Owin.Security.Providers.MyHeritage\Owin.Security.Providers.MyHeritage.csproj">
       <Project>{84795078-31b5-4369-bd1b-f960165f8c71}</Project>
       <Name>Owin.Security.Providers.MyHeritage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\Owin.Security.Providers.Okta\Owin.Security.Providers.Okta.csproj">
+      <Project>{08ef9acf-449e-467e-a18b-f7a6f4afc2e6}</Project>
+      <Name>Owin.Security.Providers.Okta</Name>
     </ProjectReference>
     <ProjectReference Include="..\src\Owin.Security.Providers.Onshape\Owin.Security.Providers.Onshape.csproj">
       <Project>{9fec99f8-6f45-40a2-8200-85381434c79a}</Project>
